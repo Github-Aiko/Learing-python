@@ -8,12 +8,12 @@ monthly_interest_rate = annual_interest_rate / 1200
 
 # Initialize variables
 months = 0
-remaining_balance = loan_amount
+loan_amount_remaining = loan_amount
 
 # Loop until remaining balance is 0 or less
-while remaining_balance > 0:
+while loan_amount_remaining > 0:
     # Calculate interest for the month
-    interest = remaining_balance * monthly_interest_rate
+    interest = loan_amount_remaining * monthly_interest_rate
     
     # If monthly payment is less than the interest, notify the user and break out of loop
     if monthly_payment < interest:
@@ -21,10 +21,10 @@ while remaining_balance > 0:
         break
     
     # Calculate payment for the month
-    payment = min(remaining_balance + interest, monthly_payment)
+    payment = min(loan_amount_remaining + interest, monthly_payment)
     
     # Subtract payment from remaining balance
-    remaining_balance -= payment - interest
+    loan_amount_remaining -= payment - interest
     
     # Increment the number of months
     months += 1

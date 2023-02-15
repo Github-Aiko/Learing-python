@@ -1,16 +1,29 @@
-# Taking input from user 
-A_population = int(input("Please enter the population of City A: ")) 
-growth_rate_A = int(input("Please enter the growth rate of City A: ")) 
-B_population = int(input("Please enter the population of City B: ")) 
-growth_rate_B = int(input("Please enter the growth rate of City B: ")) 
-  
-# Calculating the number of years 
+def get_valid_input(prompt):
+    while True:
+        value = input(prompt)
+        try:
+            value = int(value)
+            if value <= 0:
+                print("Please enter a positive integer.")
+            else:
+                return value
+        except ValueError:
+            print("Please enter a valid integer.")
+
+A_population = get_valid_input("Please enter the population of City A: ")
+growth_rate_A = get_valid_input("Please enter the growth rate of City A: ")
+B_population = get_valid_input("Please enter the population of City B: ")
+growth_rate_B = get_valid_input("Please enter the growth rate of City B: ")
+
 num_years = 0
-while A_population < B_population: 
-    A_population += A_population * growth_rate_A / 100 
-    B_population += B_population * growth_rate_B / 100 
+while A_population < B_population:
+    A_population *= (1 + growth_rate_A / 100)
+    B_population *= (1 + growth_rate_B / 100)
     num_years += 1
-  
-# Printing the result 
-print("Number of years after which City A population will be greater than or equal to City B population is", num_years) 
-print("At this time, City A population is", round(A_population), "and City B population is", round(B_population))
+
+print(f"Population Growth Simulation Results:\n"
+      f"{'City':<10}{'Population':>15}\n"
+      f"{'A':<10}{round(A_population):>15,}\n"
+      f"{'B':<10}{round(B_population):>15,}\n"
+      f"\n"
+      f"City A will have a larger or equal population to City B in {num_years:,} years.")
