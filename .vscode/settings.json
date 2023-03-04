@@ -1,0 +1,9 @@
+{
+	"python.linting.enabled": false,
+	"python.pythonPath":"/opt/homebrew/bin/python3",
+	"python.autoComplete.extraPaths": [
+
+	],
+	"python.linting.pylintEnabled": true,
+	"python.analysis.extraPaths": []
+}
