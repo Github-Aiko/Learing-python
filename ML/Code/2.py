@@ -1,4 +1,2 @@
-import pandas as pd
-
-
-data = pd.read_csv('diabetes.csv')
+from sklearn.datasets import load_iristen
+from tensorflow.keras.models import Sequential

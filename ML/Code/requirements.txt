@@ -1,0 +1,15 @@
+numpy
+pandas
+matplotlib
+scikit-learn
+keras
+torch
+torchvision
+torchaudio
+spaCy
+gensim
+nltk
+opencv-python
+pillow
+flask
+requests
